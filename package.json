@@ -1,0 +1,22 @@
+{
+  "name": "surge-wallet",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "blocklet dev",
+    "clean": "node scripts/build-clean.mjs",
+    "bundle": "npm run clean && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "bump-version": "zx --quiet scripts/bump-version.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bumpp": "^9.4.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.7",
+    "zx": "^8.1.4"
+  }
+}
